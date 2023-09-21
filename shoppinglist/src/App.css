@@ -7,13 +7,48 @@ body {
 }
 
 .App { 
+   
 
     margin: auto; 
-    
+    position: relative;  
+    border: solid black;
+    padding-bottom: 4px;
+    width: 25%; 
     text-align: center;
     
+    background-color: aquamarine;
 
 
+
+
+}  
+
+.TextBox { 
+
+    border:none; 
+    border-radius: 10px;
+    padding: 10px 10px; 
+    font-size: 16px;
+
+}
+
+
+
+.Button { 
+    margin: 10px; 
+    padding: 15px 32px; 
+    font-size: 16px;
+    border: none;
+    background-color:darkcyan; 
+    color: white;
+    border-radius: 3px;
+
+
+} 
+
+p { 
+
+    font-size: 16px;
 
 
 }

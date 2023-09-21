@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { useState } from 'react';
+import { useState} from 'react';
 import './App.css';
 
 function App() {
@@ -7,6 +7,10 @@ function App() {
     const [list,setList] = useState([])
     const [inputData,setInputData] = useState('');
 
+    const [data, setData] = useState([]);
+
+
+  
 
     const handleAddItem = () => { 
 
@@ -23,7 +27,7 @@ function App() {
 
         for (let i = 0; i < list.length; i++) { 
 
-            if(index != i) { 
+            if(index !== i) { 
 
                 newList.push(list[i])
 
@@ -47,8 +51,8 @@ function App() {
        <h1>Grocery List</h1>
 
        <div className = 'input'> 
-        <input type='text' value={inputData} onChange= {(event) => setInputData(event.target.value)}></input>
-        <input type = 'button' value="ADD" onClick = {() => handleAddItem()}></input>
+        <input type='text' value={inputData} className='TextBox' onChange= {(event) => setInputData(event.target.value)}></input>
+        <input type = 'button' value="ADD" className='Button' onClick = {() => handleAddItem()}></input>
 
        </div>
 
