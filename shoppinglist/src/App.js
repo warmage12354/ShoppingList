@@ -1,23 +1,38 @@
 import React from 'react'; 
 import { useState} from 'react';
-import './App.css';
+import './App.css'; 
+import Axios from 'axios';
 
 function App() {
 
     const [list,setList] = useState([])
-    const [inputData,setInputData] = useState('');
+    const [foodName,setFoodName] = useState('');
 
-    const [data, setData] = useState([]);
-
+    
 
   
 
     const handleAddItem = () => { 
 
-        const newList = [...list,{title:inputData}]
+      console.log(foodName)
+
+      Axios.post('http://localhost:3001/create', { 
+
+      
+      foodName:foodName
+
+      }).then(() => { 
+
+        console.log("success")
+
+      })
+
+
+        const newList = [...list,{title:foodName}]
         setList(newList) 
-        setInputData('') 
-        
+        setFoodName('') 
+      
+       
 
     }
 
@@ -51,7 +66,7 @@ function App() {
        <h1>Grocery List</h1>
 
        <div className = 'input'> 
-        <input type='text' value={inputData} className='TextBox' onChange= {(event) => setInputData(event.target.value)}></input>
+        <input type='text' value={foodName} className='TextBox' onChange= {(event) => setFoodName(event.target.value)}></input>
         <input type = 'button' value="ADD" className='Button' onClick = {() => handleAddItem()}></input>
 
        </div>
