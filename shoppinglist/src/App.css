@@ -8,16 +8,14 @@ body {
 
 .App { 
    
-
+    
     margin: auto; 
-    position: relative;  
     border: solid black;
     padding-bottom: 4px;
     width: 25%; 
     text-align: center;
-    
     background-color: aquamarine;
-
+    overflow: hidden;
 
 
 
